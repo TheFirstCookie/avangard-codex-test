@@ -29,7 +29,9 @@ git push -u origin main
 
 ## Vercel
 
-Importă repository-ul GitHub în Vercel. Rădăcina proiectului este chiar rădăcina repository-ului. `vercel.json` setează build command-ul `npm run build` și directorul de publicare `dist`. Poți lăsa preset-ul detectat de Vercel pe **Other**. După primul deploy, Vercel va afișa adresa site-ului.
+Importă repository-ul GitHub în Vercel. Rădăcina proiectului este chiar rădăcina repository-ului. `vercel.json` selectează explicit preset-ul **Other** prin `"framework": null`, setează build command-ul `npm run build` și directorul de publicare `dist`. Site-ul este servit static; `server.mjs` este doar pentru previzualizare locală. După primul deploy, Vercel va afișa adresa site-ului.
+
+Dacă un deploy existent afișează `500 FUNCTION_INVOCATION_FAILED`, verifică în **Settings → Build and Deployment** că rădăcina proiectului conține acest `vercel.json`, preset-ul este **Other**, build command-ul este `npm run build`, iar output directory este `dist`. Trimite configurația actualizată pe GitHub pentru a declanșa un deploy nou. Dacă eroarea persistă, consultă **Logs** pentru excepția exactă; codul de eroare singur nu identifică motivul.
 
 `sitemap.xml` și `robots.txt` folosesc ca adresă implicită `https://avangardautocheck.com`. Dacă publici întâi pe domeniul `.vercel.app`, setează variabila de build `PUBLIC_SITE_URL` în project settings cu adresa publică Vercel și redeployează. Când domeniul propriu este conectat, seteaz-o la domeniul canonic, de exemplu `https://www.avangardautocheck.com`.
 
