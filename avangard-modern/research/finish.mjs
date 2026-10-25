@@ -1,0 +1,10 @@
+import { readFile, writeFile } from 'node:fs/promises';
+let html = await readFile('dist/index.html', 'utf8');
+html = html.replace('EST. ÎNCREDERE', 'AVANGARD AUTOCHECK');
+html = html.replace('pattern="[+0-9 ()\\-]{6,22}"', 'pattern="[+0-9\\s\\-\\(\\)]{6,22}"');
+const labels = ['Motor și transmisie', 'Caroserie și vopsea', 'Electronică și interior', 'Șasiu și siguranță'];
+labels.forEach((label, i) => { html = html.replace(`id="tab-${i}" role="tab"`, `id="tab-${i}" role="tab" aria-label="${label}"`); });
+await writeFile('dist/index.html', html);
+let css = await readFile('dist/styles.css', 'utf8');
+css = css.replace('filter:brightness(.65) saturate(.5)', 'filter:brightness(.85) saturate(.5)');
+await writeFile('dist/styles.css', css);

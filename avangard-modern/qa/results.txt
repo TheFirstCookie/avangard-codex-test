@@ -1,0 +1,7 @@
+9 pages: headings, metadata, image alt, unique IDs and HTTP 200.
+285 local links/assets and anchors resolved.
+DOM interactions: mobile menu, all four inspection hotspots/tabs, review next/previous, motion pause and reduced motion passed.
+Blog: every category filter shows matching articles.
+Contact: required fields, six valid service mappings and email encoding checked; no real messages sent.
+CSS font references resolved, including Romanian glyph subsets.
+LIMIT: visual rendering, viewport layout, native form validation and mail client handoff not browser-verified. Chrome launch denied by environment IPC permissions.
