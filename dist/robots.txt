@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://avangard-autocheck-redesign.navytetra256.chatgpt.site/sitemap.xml
